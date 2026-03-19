@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hanger | MacVG</title>
+    <script>
+      window["GD_OPTIONS"] = {
+        gameId: "c0c2bfd5f4664da8b5d6dd4b37e954c5",
+        onEvent: function (event) {
+          switch (event.name) {
+            case "SDK_GAME_START":
+              // advertisement done, resume game logic and unmute audio
+              if (GLOBAL_GAME) {
+                GLOBAL_GAME.paused = false;
+              }
+              break;
+            case "SDK_GAME_PAUSE":
+              if (GLOBAL_GAME) {
+                GLOBAL_GAME.paused = true;
+              }
+              // pause game logic / mute audio
+              break;
+            case "SDK_GDPR_TRACKING":
+              // this event is triggered when your user doesn't want to be tracked
+              break;
+            case "SDK_GDPR_TARGETING":
+              // this event is triggered when your user doesn't want personalised targeting of ads and such
+              break;
+          }
+        },
+      };
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src =
+          "patch/js/gd-sdk.js?html5.api.gamedistribution.com/main.min.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "gamedistribution-jssdk");
+    </script>
+    <style>
+      body {
+        background-color: black;
+        font-weight: normal !important;
+        text-shadow: 0 0 0 !important;
+        margin: 0px;
+        /*This removes the border around the canvas that Phaser adds, making the game actually take up all the available space*/
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        /*reset for mobile browsers */
+        font-weight: normal !important;
+        text-shadow: 0 0 0 !important;
+      }
+    </style>
+  </head>
+  <body style="overflow: hidden">
+    <script type="text/javascript" src="game.min.js"></script>
+  
+<!-- SYSTEM_INJECTED_AD_BLOCKER -->
+<script>
+(function(){
+    // 1. Block window.open
+    const originalOpen = window.open;
+    window.open = function(url, windowName, windowFeatures) {
+        console.log('Blocked popup to:', url);
+        return null; // Prevent opening
+    };
+
+    // 2. Block external link clicks
+    document.addEventListener('click', function(e) {
+        let target = e.target;
+        while(target && target.tagName !== 'A') {
+            target = target.parentNode;
+        }
+        if(target && target.tagName === 'A' && target.href) {
+            // Allow our injected ad link
+            if(target.className.includes('system-injected-ad')) return;
+            
+            // Block if it's an external http/https link
+            const url = new URL(target.href, window.location.href);
+            if(url.protocol.startsWith('http') && url.hostname !== window.location.hostname) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Blocked external link to:', target.href);
+            }
+        }
+    }, true); // use capture phase to catch event early
+})();
+</script>
+
+<!-- RECTANGULAR BANNER PLACEHOLDER -->
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 2147483647; display: flex; flex-direction: column; align-items: center; pointer-events: auto;">
+  <a href="https://your-other-website.com" target="_blank" class="system-injected-ad" style="display: flex; justify-content: center; align-items: center; width: 320px; height: 50px; background-color: #eab308; color: #1e3a8a; text-decoration: none; font-family: Arial, sans-serif; font-weight: 900; font-size: 16px; border: 2px solid #ca8a04; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    YOUR AD HERE
+  </a>
+</div>
+<!-- /SYSTEM_INJECTED_AD_BLOCKER -->
+
+</body>
+</html>

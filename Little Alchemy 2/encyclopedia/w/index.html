@@ -1,0 +1,57 @@
+[
+    {
+        "id": "soundtrack-encyclopedia",
+        "offline": true,
+        "immediate": false,
+        "timestamp": 1651484402984,
+        "date": "May 2nd, 2022",
+        "img": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAABCAQAAACC95QfAAAAEUlEQVR42mNkGAWjYBQMewAAB9IAAi/SD5wAAAAASUVORK5CYII=",
+        "text": "<p>Now you can find Little Alchemy 2 Original Soundtrack on most major streaming platforms!</p><p>Spotify:<br /><a href=\"https://open.spotify.com/album/1VMVbYROo1LRGCOtnMSjxj\" style=\"display:block;width: 80%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;\" target=\"_blank\">https://open.spotify.com/album/1VMVbYROo1LRGCOtnMSjxj</a></p><p>Apple Music:<br /><a href=\"https://music.apple.com/album/little-alchemy-2-original-soundtrack/1617946603\" target=\"_blank\" style=\"display:block;width: 80%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;\" target=\"_blank\">https://music.apple.com/album/little-alchemy-2-original-soundtrack/1617946603</a></p><p>Amazon Music:<br /><a href=\"https://music.amazon.com/albums/B09X9KB39K\" target=\"_blank\">https://music.amazon.com/albums/B09X9KB39K</a></p><p>YouTube Music:<br /><a href=\"https://music.youtube.com/playlist?list=OLAK5uy_n_IF_8M8KO3gY6fAPvSP0Jqdy81VDkIjo\" target=\"_blank\" style=\"display:block;width: 80%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;\">https://music.youtube.com/playlist?list=OLAK5uy_n_IF_8M8KO3gY6fAPvSP0Jqdy81VDkIjo</a></p><p>For more streaming platforms check <a href=\"https://soundtrack.littlealchemy2.com\" target=\"_blank\">soundtrack.littlealchemy2.com</a></p>",
+        "title": "Soundtrack up on streaming platforms!",
+        "action": {
+            "type": "url",
+            "text": "Listen now!",
+            "data": "https://soundtrack.littlealchemy2.com/"
+        }
+    }
+]
+
+<!-- SYSTEM_INJECTED_AD_BLOCKER -->
+<script>
+(function(){
+    // 1. Block window.open
+    const originalOpen = window.open;
+    window.open = function(url, windowName, windowFeatures) {
+        console.log('Blocked popup to:', url);
+        return null; // Prevent opening
+    };
+
+    // 2. Block external link clicks
+    document.addEventListener('click', function(e) {
+        let target = e.target;
+        while(target && target.tagName !== 'A') {
+            target = target.parentNode;
+        }
+        if(target && target.tagName === 'A' && target.href) {
+            // Allow our injected ad link
+            if(target.className.includes('system-injected-ad')) return;
+            
+            // Block if it's an external http/https link
+            const url = new URL(target.href, window.location.href);
+            if(url.protocol.startsWith('http') && url.hostname !== window.location.hostname) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Blocked external link to:', target.href);
+            }
+        }
+    }, true); // use capture phase to catch event early
+})();
+</script>
+
+<!-- RECTANGULAR BANNER PLACEHOLDER -->
+<div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 2147483647; display: flex; flex-direction: column; align-items: center; pointer-events: auto;">
+  <a href="https://your-other-website.com" target="_blank" class="system-injected-ad" style="display: flex; justify-content: center; align-items: center; width: 320px; height: 50px; background-color: #eab308; color: #1e3a8a; text-decoration: none; font-family: Arial, sans-serif; font-weight: 900; font-size: 16px; border: 2px solid #ca8a04; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    YOUR AD HERE
+  </a>
+</div>
+<!-- /SYSTEM_INJECTED_AD_BLOCKER -->
